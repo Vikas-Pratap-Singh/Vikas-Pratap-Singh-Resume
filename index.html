@@ -1,474 +1,767 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Resume of Vikas Pratap Singh" />
-  <meta name="author" content="Vikas Pratap Singh" />
-  <meta name="keywords" content="Vikas Singh, Vikas Pratap Singh,IIIT Pune, Engineer, Electronics, Portfolio, Resume, Professional">
-  <title>Vikas Pratap Singh-Resume</title>
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vikas Pratap Singh — Data Engineer & Technical Consultant">
+  <title>Vikas Pratap Singh — Data Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg:      #070B0F;
+      --bg-2:    #0C1017;
+      --bg-3:    #141A24;
+      --bg-4:    #1B2232;
+      --text:    #DDE3EF;
+      --text-2:  #7E8BA5;
+      --text-3:  #4A5568;
+      --accent:  #00CEB2;
+      --accent2: #0080FF;
+      --glow:    rgba(0,206,178,0.12);
+      --glowb:   rgba(0,128,255,0.10);
+      --border:  rgba(255,255,255,0.07);
+      --border-a:rgba(0,206,178,0.25);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-<body id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a> -->
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars ml-1"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase m-auto">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#masterhead">Home</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Skills</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-          <li class="nav-item"><a class="btn btn-dark btn-social mx-2" href="https://github.com/Vikas-Pratap-Singh" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li class="nav-item"><a class="btn btn-dark btn-social mx-2" href="https://auth.geeksforgeeks.org/user/vikas_iiitp/" target="_blank"><i class="fas fa-code"></i></a></li>
-          <li class="nav-item"><a class="btn btn-dark btn-social mx-2" href="https://www.hackerrank.com/vikas_iiitp" target="_blank"><i class="fab fa-hackerrank"></i></a></li>
-          <li class="nav-item"><a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/vikas-pratap-singh" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-        </ul>
-      </div>
+    /* ── NAV ── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:200;
+      padding: 1.1rem 5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(7,11,15,0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+    .nav-logo span { opacity: 0.45; }
+    .nav-links { display:flex; gap:2.25rem; list-style:none; }
+    .nav-links a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-socials { display:flex; gap:0.6rem; }
+    .nav-socials a {
+      color: var(--text-2);
+      text-decoration: none;
+      width: 34px; height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      display: flex; align-items:center; justify-content:center;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .nav-socials a:hover {
+      color: var(--accent);
+      border-color: var(--border-a);
+      background: var(--glow);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 5vw 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,206,178,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,206,178,0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 70% 70% at 15% 50%, black 0%, transparent 100%);
+    }
+    .hero-orb {
+      position: absolute;
+      right: -5vw; top: 50%; transform: translateY(-50%);
+      width: clamp(300px, 45vw, 600px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, rgba(0,206,178,0.08) 0%, rgba(0,128,255,0.06) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { max-width: 860px; position:relative; z-index:1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem; letter-spacing: 0.18em;
+      color: var(--accent);
+      border: 1px solid var(--border-a);
+      background: var(--glow);
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .hero-name {
+      font-size: clamp(3.2rem, 9.5vw, 7.5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.75rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+    .hero-name .line2 { color: var(--accent); }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--text-2);
+      font-weight: 300;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+    .hero-subtitle strong { color: var(--text); font-weight: 500; }
+    .hero-cta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+    .btn-primary {
+      padding: 0.9rem 2.25rem;
+      background: var(--accent);
+      color: #070B0F;
+      text-decoration: none;
+      font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: 7px;
+      display: inline-flex; align-items:center; gap:0.5rem;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #00B89C; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,206,178,0.25); }
+    .btn-outline {
+      padding: 0.9rem 2.25rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500; font-size: 0.8rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--border-a); color: var(--accent); background: var(--glow); }
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items:center; gap: 0.5rem;
+      opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
+    }
+    .scroll-hint span {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem; letter-spacing: 0.2em;
+      color: var(--text-3); text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 6rem 5vw; }
+    .s-tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.75rem;
+    }
+    .s-tag::before { content: '//\00a0'; opacity: 0.4; }
+    .s-title {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 700; letter-spacing: -0.02em;
+      color: var(--text); margin-bottom: 3.5rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg-2); }
+    .timeline { max-width: 820px; position:relative; }
+    .timeline::before {
+      content:''; position:absolute;
+      left:0; top:0.5rem; bottom:0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent) 0%, rgba(0,206,178,0.08) 80%, transparent 100%);
+    }
+    .tl-item {
+      position:relative; padding-left: 2.75rem; padding-bottom: 3.25rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position:absolute; left:-5px; top:0.45rem;
+      width:11px; height:11px; border-radius:50%;
+      background: var(--accent); border: 2px solid var(--bg-2);
+      box-shadow: 0 0 0 3px rgba(0,206,178,0.18), 0 0 12px rgba(0,206,178,0.4);
+    }
+    .tl-date {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 0.4rem;
+    }
+    .tl-role {
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--text); margin-bottom: 0.2rem;
+    }
+    .tl-company {
+      font-size: 0.82rem; color: var(--text-2);
+      margin-bottom: 1.1rem; font-weight: 400;
+    }
+    .tl-bullets { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+    .tl-bullets li {
+      font-size: 0.875rem; color: var(--text-2);
+      padding-left: 1.2rem; position:relative; line-height: 1.55;
+    }
+    .tl-bullets li::before {
+      content: '›'; position:absolute; left:0;
+      color: var(--accent); font-size:1rem;
+      font-family: 'Fira Code', monospace;
+    }
+    .hi { color: var(--text); font-weight: 500; }
+    .tag-inline {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin: 0 1px;
+      vertical-align: middle;
+    }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--bg); }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+      max-width: 960px;
+    }
+    .edu-card {
+      padding: 2rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      position:relative; overflow:hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .edu-card::after {
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:2px;
+      background: linear-gradient(to right, var(--accent), var(--accent2));
+      opacity:0; transition: opacity 0.3s;
+    }
+    .edu-card:hover { transform: translateY(-5px); border-color: var(--border-a); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+    .edu-card:hover::after { opacity:1; }
+    .edu-icon-wrap {
+      width:46px; height:46px;
+      background: var(--bg-3);
+      border: 1px solid var(--border-a);
+      border-radius: 11px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom: 1.25rem;
+      color: var(--accent); font-size: 1.1rem;
+    }
+    .edu-degree { font-size:1rem; font-weight:600; color:var(--text); margin-bottom:0.4rem; }
+    .edu-school { font-size:0.8rem; color:var(--text-2); line-height:1.45; margin-bottom:1rem; }
+    .edu-pills { display:flex; gap:0.5rem; flex-wrap:wrap; }
+    .pill {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem; padding: 0.22rem 0.65rem;
+      background: var(--glow); color: var(--accent);
+      border: 1px solid var(--border-a);
+      border-radius: 40px; letter-spacing:0.05em;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg-2); }
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 5rem;
+      max-width: 900px;
+    }
+    .sk-cat-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
+    }
+    .sk-tags { display:flex; flex-wrap:wrap; gap:0.6rem; }
+    .sk-tag {
+      padding: 0.5rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 0.83rem; color: var(--text-2);
+      background: var(--bg-3);
+      cursor:default;
+      transition: all 0.2s;
+    }
+    .sk-tag:hover {
+      border-color: var(--border-a); color: var(--accent);
+      background: var(--glow); transform: translateY(-2px);
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg); }
+    .proj-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 960px;
+    }
+    .proj-card {
+      padding: 1.75rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: all 0.3s;
+      position: relative; overflow:hidden;
+    }
+    .proj-card::before {
+      content:''; position:absolute;
+      left:0; top:0; bottom:0; width:3px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      opacity:0; transition: opacity 0.3s;
+    }
+    .proj-card:hover { transform: translateX(4px); border-color: var(--border-a); }
+    .proj-card:hover::before { opacity:1; }
+    .proj-icon {
+      width:40px; height:40px;
+      background: var(--bg-3);
+      border-radius:9px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--accent); font-size:1rem;
+      margin-bottom:1rem;
+    }
+    .proj-title { font-size:1rem; font-weight:600; color:var(--text); margin-bottom:0.4rem; }
+    .proj-period { font-family:'Fira Code',monospace; font-size:0.68rem; color:var(--accent); margin-bottom:0.75rem; letter-spacing:0.08em; }
+    .proj-desc { font-size:0.82rem; color:var(--text-2); line-height:1.55; margin-bottom:1rem; }
+    .proj-stack { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .proj-tech {
+      font-size:0.68rem; font-family:'Fira Code',monospace;
+      padding: 0.2rem 0.55rem;
+      background: var(--bg-4); color:var(--text-2);
+      border: 1px solid var(--border);
+      border-radius:4px;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg-2); }
+    .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; max-width:960px; }
+    .contact-heading {
+      font-size: clamp(1.5rem,3vw,2.25rem);
+      font-weight:700; letter-spacing:-0.02em;
+      color:var(--text); margin-bottom:1rem;
+    }
+    .contact-body { font-size:1rem; color:var(--text-2); font-weight:300; margin-bottom:2.25rem; line-height:1.7; }
+    .contact-body strong { color:var(--text); font-weight:600; }
+    .social-list { display:flex; flex-direction:column; gap:0.75rem; }
+    .social-item {
+      display:flex; align-items:center; gap:1rem;
+      padding:1rem 1.25rem;
+      background: var(--bg-3); border:1px solid var(--border);
+      border-radius:10px; text-decoration:none; color:var(--text-2);
+      font-size:0.875rem; transition: all 0.2s;
+    }
+    .social-item:hover {
+      border-color: var(--border-a); color:var(--accent);
+      background: var(--glow); transform:translateX(5px);
+    }
+    .social-ico {
+      width:38px; height:38px; border-radius:8px;
+      background: var(--bg-4); border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1rem; flex-shrink:0; color:var(--text-2);
+      transition:color 0.2s;
+    }
+    .social-item:hover .social-ico { color:var(--accent); }
+    .social-label { font-weight:600; color:var(--text); font-size:0.875rem; }
+    .social-handle { font-size:0.72rem; color:var(--text-3); font-family:'Fira Code',monospace; margin-top:0.1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.75rem 5vw;
+      border-top: 1px solid var(--border);
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+    }
+    footer p {
+      font-family:'Fira Code',monospace;
+      font-size:0.72rem; color:var(--text-3);
+    }
+    footer a { color:var(--text-2); text-decoration:none; transition:color 0.2s; }
+    footer a:hover { color:var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity:0; } to { opacity:1; }
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; } 50% { opacity:0.4; }
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity:0.3; } 50% { opacity:1; }
+    }
+    .reveal {
+      opacity:0; transform:translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.in { opacity:1; transform:none; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px) {
+      .nav-links { display:none; }
+      .skills-wrap { grid-template-columns:1fr; gap:2rem; }
+      .contact-layout { grid-template-columns:1fr; gap:2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span>~/</span>vikas.ps</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a href="https://github.com/Vikas-Pratap-Singh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/vikas-pratap-singh" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.hackerrank.com/vikas_iiitp" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+    <a href="https://auth.geeksforgeeks.org/user/vikas_iiitp/" target="_blank" title="GeeksForGeeks"><i class="fas fa-code"></i></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      Open for Opportunities
     </div>
-  </nav>
-  <!-- Masthead-->
-  <header class="masthead" id="masterhead">
-    <div class="container">
-      <div class="masthead-heading text-uppercase ">Vikas Pratap Singh</div>
-      <div class="masthead-subheading"><strong>Data Engineer</strong></div>
-      <a class="btn  btn-xl btn-outline-primary text-uppercase js-scroll-trigger" href="assets/Resume.pdf" download target="_blank">Download Resume</a>
+    <h1 class="hero-name">
+      Vikas Pratap<br>
+      <span class="line2">Singh</span>
+    </h1>
+    <p class="hero-subtitle">
+      <strong>Data Engineer</strong> & Technical Consultant building scalable
+      ETL pipelines, big data workflows, and cloud solutions at o9 Solutions.
+    </p>
+    <div class="hero-cta">
+      <a href="assets/Resume.pdf" download class="btn-primary">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+      <a href="#experience" class="btn-outline">View Experience</a>
     </div>
-  </header>
-  <!-- Services-->
-  <section class="page-section" id="education">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase mb-5">Education</h2>
-        <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <a href="https://www.iiitp.ac.in" class="education-logo-link" target="_blank"><i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <!-- <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-              <i class="fas fa-graduation-cap fa-stack-1x "></i></a>
-          </span>
-          <h4 class="my-3">B-Tech (ECE)</h4>
-          <p class="text-muted">Indian Institute of Information Technology, Pune (IIIT Pune) <br>Electronics and Communication Engineering <br> May 2021 | CGPA: 8.85/10</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <a href="http://www.sainikschooltilaiya.org" class="education-logo-link" target="_blank"><i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <!-- <i class="fas fa-laptop fa-stack-1x fa-inverse"></i> -->
-              <i class="fas fa-university fa-stack-1x "></i></a>
-          </span>
-          <h4 class="my-3">Senior Secondary</h4>
-          <p class="text-muted">Sainik School Tilaiya, Koderma <br> Jharkhand (MoD)<br>AISSCE | March 2016<br>Percentage: 88.00%</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <a href="http://www.sainikschooltilaiya.org" class="education-logo-link" target="_blank"><i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <!-- <i class="fas fa-lock fa-stack-1x fa-inverse"></i> -->
-              <i class="fas fa-book-reader fa-stack-1x "></i></a>
-          </span>
-          <h4 class="my-3">Secondary</h4>
-          <p class="text-muted">Sainik School Tilaiya, Koderma <br> Jharkhand (MoD)<br>AISSE | March 2014<br>CGPA: 9.2/10</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- experience-->
-  <section class="page-section bg-light" id="experience">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase mb-5">experience</h2>
-        <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-      </div>
-      <ul class="timeline">
-        <li>
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/o9Solutions.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Sr. Technical Consultant, o9Solutions Inc.</h5>
-              <h6>(March 2023-Ongoing)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong>Working on <em>Hadoop, PySpark, Apache Hive, Apache Airflow, Azure, SQL, SSIS</em> and <em>Git</em> to build a stable and effective ETL workflow.</p>
-              <p class="text-muted"><strong>-</strong>Analyzing client needs and developing customized data engineering solutions, resulting in measurable improvements to meet their specific requirements.</p>
-              <p class="text-muted"><strong>-</strong>Enhanced and automated big data transformation and ingestion workflows, resulting in a <strong>40 mins</strong> reduction in execution time and elimination of manual interventions.</p>
-              <p class="text-muted"><strong>-</strong>Gathered user feedback, analyzed persistent issues, and contributed to boosting user adoption rates by <strong>25%</strong>.</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/o9Solutions.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Technical Consultant, o9Solutions Inc.</h5>
-              <h6>(July 2021-March 2023)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong> Collaborating within the CS team, significantly improved efficiency and effectiveness in automating <em>Retail Sales</em> and <em>Procurement</em> Process for clients.</p>
-              <p class="text-muted"><strong>-</strong><em>Optimized</em> execution time of daily scheduled data load batches by <strong>55 mins</strong> which impact more than <strong>900 users.</strong></p>
-              <p class="text-muted"><strong>-</strong>Revamped and enhanced a complete solution for the client by leveraging <em>Hadoop, Apache Hive, Apache Airflow, Azure, SQL, SSIS</em> and <em>IBPL</em>, leading to a <strong>30%</strong> boost in data processing efficiency and a <strong>20%</strong> reduction in costs.</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/o9Solutions.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Intern, o9Solutions Inc.</h5>
-              <h6>(Feb 2021-June 2021)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong>Developed a high-impact feature Employee Rating Portal, to significantly enhance client engagement & satisfaction.</p>
-              <p class="text-muted"><strong>-</strong>Worked with <em>Azure, SQL, SSIS, o9</em> and <em>IBPL</em> to build an end to end solution for multiple projects.</p>
-              <p class="text-muted"><strong>-</strong>Revamped two workspaces and fixed bugs.</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/Virtual.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Virtual White Board</h5>
-              <h6>(Dec 2020-Jan 2021)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong>A python based <em>Teaching Board</em> that aims at easing explanation for people in virtual mode.</p>
-              <p class="text-muted"><strong>-</strong>It uses OpenCv & numpy library to extract input from streaming video and transform the movement to display on canvas.</p>
-              <p class="text-muted"><strong>-</strong>Equipped with multiple functionality such as dual theme, save and pdf notes generation.</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/cadence.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Intern, Cadence Design Systems</h5>
-              <h6>(May 2020-Nov 2020)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong>Worked in Design Engineering team helping them in validating designs.</p>
-              <p class="text-muted"><strong>-</strong>Worked on running regression and generating test cases for <em>IC Verification.</em> </p>
-              <p class="text-muted"><strong>-</strong>My worked involved playing around with <em>System Verilog</em> and <em>Perl.</em> </p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/uwi.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Underwater Image Enhancement</h5>
-              <h6>(Aug 2019-Dec 2019)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong>Worked on to develop an effective technique that enhances the image captured underwater.</p>
-              <p class="text-muted"><strong>-</strong>It is a single image based approach which doesn't require any specialised hardware.</p>
-              <p class="text-muted"><strong>-</strong>Developed based on white balancing, histogram and multi scale fusion techniques in MATLAB.</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/iitk.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Intern, IIT Kanpur</h5>
-              <h6>(May 2019-June 2019)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted">Intern at Intelligent Systems Lab , IIT Kanpur <br>Guide: Prof Laxmidhar Behara<br></p>
-              <p class="text-muted"><strong>-</strong>An educational internship primarily focuses on teaching concepts of <em><abbr title="AI and IoT">AIoT</abbr></em>. </p>
-              <p class="text-muted"><strong>-</strong>Gained hands on experience on IoT.</p>
-              <p class="text-muted"><strong>-</strong>Developed a remote controlled obstacle avoidance bots equipped with multiple sensor.</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/iot.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Animal Monitoring System </h5>
-              <h6>(May 2019-July 2019)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong>A Python based <em>Animal Monitoring System</em> aims at preventing animals to enter in the fields.</p>
-              <p class="text-muted"><strong>-</strong>It uses OpenCv, Raspberry-Pi, Pi-camera for animal detection and communication with server.</p>
-              <p class="text-muted"><strong>-</strong>Successfully tested it to detect dogs by deploying Pi-camera on drone in IIT Kanpur campus.</p>
-              </div>
-          </div>
-        </li>
-        <!--li>
-          <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/experience/iot.jpg" alt="" /></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h5 class="subheading">Short-Term course on Embedded system and IoT, IIT Hyderabad </h5>
-              <h6>(December 2017)</h6>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><strong>-</strong></p>
-              <p class="text-muted"><strong>-</strong></p>
-              <p class="text-muted"><strong>-</strong></p>
-              <p class="text-muted">Studied the entire application of embedded system and IoT in the automation of everyday work.<br>Hands on experience with Arduino boards.</p>
-            </div>
-          </div>
-        </li-->
-        <li class="timeline-inverted">
-          <div class="timeline-image">
-            <h4>
-              Open
-              <br />
-              for
-              <br />
-              Opprtunities
-            </h4>
-          </div>
-        </li>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="s-tag">career</div>
+  <h2 class="s-title">Experience</h2>
+  <div class="timeline">
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Mar 2023 — Present</div>
+      <div class="tl-role">Sr. Technical Consultant</div>
+      <div class="tl-company">o9 Solutions Inc.</div>
+      <ul class="tl-bullets">
+        <li>Building stable ETL workflows using <span class="hi">Hadoop, PySpark, Hive, Airflow, Azure &amp; SSIS</span></li>
+        <li>Automated big data transformation &amp; ingestion pipelines — reduced execution time by <span class="hi">40 mins</span> and eliminated manual interventions entirely</li>
+        <li>Analysing client requirements and developing customised data engineering solutions to meet their specific needs</li>
+        <li>Gathered user feedback, resolved persistent issues, contributing to a <span class="hi">25% boost</span> in user adoption rates</li>
       </ul>
     </div>
-  </section>
-  <!-- Portfolio Grid-->
-  <section class="page-section " id="portfolio">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase mb-5">Skills</h2>
-        <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/01-thumbnail.jpg" alt="" />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Programming</div>
-              <!-- <div class="portfolio-caption-subheading text-muted">Illustration</div> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="" />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Big Data</div>
-              <!-- <div class="portfolio-caption-subheading text-muted">Graphic Design</div> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4  mb-4">
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="assets/img/portfolio/05-thumbnail.jpg" alt="" />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Coursework</div>
-              <!-- <div class="portfolio-caption-subheading text-muted">Identity</div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Contact-->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Contact Me</h2>
-        <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-      </div>
-      <form id="contactForm" name="sentMessage" novalidate="novalidate">
-        <div class="row align-items-stretch mb-5">
-          <div class="col-md-6">
-            <div class="form-group">
-              <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
-              <p class="help-block text-danger"></p>
-            </div>
-            <div class="form-group">
-              <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
-              <p class="help-block text-danger"></p>
-            </div>
-            <div class="form-group mb-md-0">
-              <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number." />
-              <p class="help-block text-danger"></p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group form-group-textarea mb-md-0">
-              <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-              <p class="help-block text-danger"></p>
-            </div>
-          </div>
-        </div>
-        <div class="text-center">
-          <div id="success"></div>
-          <button class="btn btn-outline-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
-        </div>
-      </form>
-    </div>
-  </section>
-  <!-- Footer-->
-  <footer class="footer py-4 bg-dark ">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class=" text-light col-sm-6 text-lg-left ">Copyright © Vikas Pratap Singh 2023</div>
-        <div class=" col-sm-6 my-3 my-lg-0 text-lg-right">
-          <a class="btn btn-light btn-social mx-2" href="https://github.com/Vikas-Pratap-Singh" target="_blank"><i class="fab fa-github"></i></a>
-          <a class="btn btn-light btn-social mx-2" href="https://auth.geeksforgeeks.org/user/vikas_iiitp/" target="_blank"><i class="fas fa-code"></i></a>
-          <a class="btn btn-light btn-social mx-2" href="https://www.hackerrank.com/vikas_iiitp" target="_blank"><i class="fab fa-hackerrank"></i></a>
-          <a class="btn btn-light btn-social mx-2" href="https://www.linkedin.com/in/vikas-pratap-singh" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <!-- <div class="col-lg-4 text-lg-right">
-                        <a class="" href="#navbarResponsive" ><i class="fas fa-arrow-circle-up fa-3x ml-auto"></i></a>
-                    </div> -->
-      </div>
-    </div>
-  </footer>
-  <!-- Portfolio Modals-->
-  <!-- Modal 1-->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <h4 class="text-uppercase">Experienced</h4>
-                <ul class="list-inline">
-                  <li>Python</li>
-                  <li>SQL</li>
-                  <li>SSIS</li>
-                  <li>Azure</li>
-                  <li>o9 IBPL</li>
-                  <li>Linux</li>
-                </ul>
-<!--                 <hr class="language-content-divider">
-                <h4 class="text-uppercase">Intermediate</h4>
-                <ul class="list-inline">
-                  <li>Javascript</li>
-                  <li>Perl</li>
-                  <li>MySql</li>
-                  <li>SSIS</li>
-                </ul>
-                <hr class="language-content-divider">
-                <h4 class="text-uppercase">Familiar</h4>
-                <ul class="list-inline">
-                  <li>Assembly Language</li>
-                  <li>Matlab</li>
-                </ul> -->
-                <button class="btn btn-outline-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times mr-1"></i>
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal 2-->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <h4 class="text-uppercase">Technology</h4>
-                <ul class="list-inline">
-                  <li>Hadoop</li>
-                  <li>Airflow</li>
-                  <li>Hive</li>
-                  <li>Hue</li>
-                  <li>Pyspark</li>
-                  <li>Linux</li>
-                </ul>
-                <hr class="language-content-divider">
-                <h4 class="text-uppercase">Tools</h4>
-                <ul class="list-inline">
-                  <li>git</li>
-                  <li><a class="btn btn-sm btn-outline-dark" href="https://github.com/Vikas-Pratap-Singh" target="_blank" type="button">
-                    <i class="fab fa-github mr-1"></i>
-                    github
-                  </a></li>
-                </ul>
-                <button class="btn btn-outline-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times mr-1"></i>
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal 3-->
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="modal-body">
-                <h4 class="text-uppercase">Coursework</h4>
-                <ul class="list-inline ">
-                  <li>Design and Analysis of Algorithm</li>
-                  <li>Data Structures</li>
-                  <li>Object Oriented Programming</li>
-                  <li>Database Management System</li>
-                  <li>Operating System</li>
-                  <li>Computer Architecture</li>
-                  <li>IoT and Sensor Data Visualization</li>
-                  <li>Human Computer Interface/Interaction</li>
-                </ul>
-                <button class="btn btn-outline-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times mr-1"></i>
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Bootstrap core JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Third party plugin JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <!-- Contact form JS-->
-  <script src="assets/mail/jqBootstrapValidation.js"></script>
-  <script src="assets/mail/contact_me.js"></script>
-  <!-- Core theme JS-->
-  <script src="js/scripts.js"></script>
-</body>
 
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Jul 2021 — Mar 2023</div>
+      <div class="tl-role">Technical Consultant</div>
+      <div class="tl-company">o9 Solutions Inc.</div>
+      <ul class="tl-bullets">
+        <li>Optimised daily scheduled data-load batches by <span class="hi">55 mins</span>, directly impacting <span class="hi">900+ users</span></li>
+        <li>Collaborated in the CS team to automate Retail Sales &amp; Procurement processes for clients</li>
+        <li>Revamped a complete client solution using Hadoop, Hive, Airflow, Azure, SQL &amp; IBPL — <span class="hi">30% efficiency gain</span> and <span class="hi">20% cost reduction</span></li>
+      </ul>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Feb 2021 — Jun 2021</div>
+      <div class="tl-role">Intern</div>
+      <div class="tl-company">o9 Solutions Inc.</div>
+      <ul class="tl-bullets">
+        <li>Developed <span class="hi">Employee Rating Portal</span> — a high-impact feature enhancing client engagement &amp; satisfaction</li>
+        <li>Built end-to-end solutions using Azure, SQL, SSIS &amp; o9 IBPL across multiple projects</li>
+        <li>Revamped two client workspaces and resolved critical bugs</li>
+      </ul>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">May 2020 — Nov 2020</div>
+      <div class="tl-role">Engineering Intern</div>
+      <div class="tl-company">Cadence Design Systems</div>
+      <ul class="tl-bullets">
+        <li>Supported the Design Engineering team in IC verification — running regressions and generating test cases</li>
+        <li>Worked extensively with <span class="hi">System Verilog</span> and <span class="hi">Perl</span></li>
+      </ul>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">May 2019 — Jun 2019</div>
+      <div class="tl-role">Research Intern</div>
+      <div class="tl-company">Intelligent Systems Lab, IIT Kanpur</div>
+      <ul class="tl-bullets">
+        <li>Guided by <span class="hi">Prof. Laxmidhar Behara</span> on AIoT concepts and practical IoT applications</li>
+        <li>Developed remote-controlled, obstacle-avoidance bots equipped with multiple sensors</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="s-tag">academic</div>
+  <h2 class="s-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+      <div class="edu-degree">B.Tech — Electronics &amp; Communication Engineering</div>
+      <div class="edu-school">Indian Institute of Information Technology, Pune (IIIT Pune)</div>
+      <div class="edu-pills">
+        <span class="pill">May 2021</span>
+        <span class="pill">CGPA 8.85 / 10</span>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon-wrap"><i class="fas fa-school"></i></div>
+      <div class="edu-degree">Senior Secondary — AISSCE</div>
+      <div class="edu-school">Sainik School Tilaiya, Koderma, Jharkhand (MoD)</div>
+      <div class="edu-pills">
+        <span class="pill">March 2016</span>
+        <span class="pill">88.00%</span>
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon-wrap"><i class="fas fa-book-open"></i></div>
+      <div class="edu-degree">Secondary — AISSE</div>
+      <div class="edu-school">Sainik School Tilaiya, Koderma, Jharkhand (MoD)</div>
+      <div class="edu-pills">
+        <span class="pill">March 2014</span>
+        <span class="pill">CGPA 9.2 / 10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-tag">tech stack</div>
+  <h2 class="s-title">Skills</h2>
+  <div class="skills-wrap">
+    <div class="reveal">
+      <div class="sk-cat-title">Programming &amp; Databases</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Python</span>
+        <span class="sk-tag">SQL</span>
+        <span class="sk-tag">SSIS</span>
+        <span class="sk-tag">o9 IBPL</span>
+        <span class="sk-tag">System Verilog</span>
+        <span class="sk-tag">Perl</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sk-cat-title">Big Data &amp; Cloud</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Apache Hadoop</span>
+        <span class="sk-tag">PySpark</span>
+        <span class="sk-tag">Apache Hive</span>
+        <span class="sk-tag">Apache Airflow</span>
+        <span class="sk-tag">Azure</span>
+        <span class="sk-tag">Hue</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sk-cat-title">Tools &amp; Platforms</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Git</span>
+        <span class="sk-tag">GitHub</span>
+        <span class="sk-tag">Linux</span>
+        <span class="sk-tag">OpenCV</span>
+        <span class="sk-tag">Raspberry Pi</span>
+        <span class="sk-tag">MATLAB</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sk-cat-title">Coursework</div>
+      <div class="sk-tags">
+        <span class="sk-tag">Data Structures</span>
+        <span class="sk-tag">Algorithms</span>
+        <span class="sk-tag">DBMS</span>
+        <span class="sk-tag">OOP</span>
+        <span class="sk-tag">Operating Systems</span>
+        <span class="sk-tag">Computer Architecture</span>
+        <span class="sk-tag">IoT &amp; Sensor Data</span>
+        <span class="sk-tag">HCI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="s-tag">side work</div>
+  <h2 class="s-title">Projects</h2>
+  <div class="proj-grid">
+    <div class="proj-card reveal">
+      <div class="proj-icon"><i class="fas fa-chalkboard"></i></div>
+      <div class="proj-title">Virtual White Board</div>
+      <div class="proj-period">Dec 2020 — Jan 2021</div>
+      <p class="proj-desc">Python-based teaching board for virtual environments. Uses gesture detection from a live video stream and renders strokes on a canvas — with dual themes, save functionality, and PDF note generation.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Python</span>
+        <span class="proj-tech">OpenCV</span>
+        <span class="proj-tech">NumPy</span>
+      </div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-icon"><i class="fas fa-water"></i></div>
+      <div class="proj-title">Underwater Image Enhancement</div>
+      <div class="proj-period">Aug 2019 — Dec 2019</div>
+      <p class="proj-desc">Single-image technique to enhance underwater photography without specialised hardware. Based on white balancing, histogram equalisation, and multi-scale fusion.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">MATLAB</span>
+        <span class="proj-tech">Image Processing</span>
+      </div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-icon"><i class="fas fa-paw"></i></div>
+      <div class="proj-title">Animal Monitoring System</div>
+      <div class="proj-period">May 2019 — Jul 2019</div>
+      <p class="proj-desc">IoT system to detect and deter animals from agricultural fields. Pi-camera on a drone successfully detected dogs on the IIT Kanpur campus during live testing.</p>
+      <div class="proj-stack">
+        <span class="proj-tech">Python</span>
+        <span class="proj-tech">OpenCV</span>
+        <span class="proj-tech">Raspberry Pi</span>
+        <span class="proj-tech">IoT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="s-tag">connect</div>
+  <div class="contact-layout">
+    <div>
+      <h2 class="contact-heading">Let's Build<br>Something Great</h2>
+      <p class="contact-body">
+        Currently open to <strong>new opportunities</strong> in data engineering
+        and technical architecture. Feel free to reach out — whether it's a role,
+        a collaboration, or just a conversation.
+      </p>
+      <a href="https://www.linkedin.com/in/vikas-pratap-singh" target="_blank" class="btn-primary">
+        Connect on LinkedIn <i class="fas fa-arrow-right" style="font-size:0.75rem"></i>
+      </a>
+    </div>
+    <div class="social-list reveal">
+      <a href="https://www.linkedin.com/in/vikas-pratap-singh" target="_blank" class="social-item">
+        <div class="social-ico"><i class="fab fa-linkedin-in"></i></div>
+        <div>
+          <div class="social-label">LinkedIn</div>
+          <div class="social-handle">vikas-pratap-singh</div>
+        </div>
+      </a>
+      <a href="https://github.com/Vikas-Pratap-Singh" target="_blank" class="social-item">
+        <div class="social-ico"><i class="fab fa-github"></i></div>
+        <div>
+          <div class="social-label">GitHub</div>
+          <div class="social-handle">Vikas-Pratap-Singh</div>
+        </div>
+      </a>
+      <a href="https://auth.geeksforgeeks.org/user/vikas_iiitp/" target="_blank" class="social-item">
+        <div class="social-ico"><i class="fas fa-code"></i></div>
+        <div>
+          <div class="social-label">GeeksForGeeks</div>
+          <div class="social-handle">vikas_iiitp</div>
+        </div>
+      </a>
+      <a href="https://www.hackerrank.com/vikas_iiitp" target="_blank" class="social-item">
+        <div class="social-ico"><i class="fab fa-hackerrank"></i></div>
+        <div>
+          <div class="social-label">HackerRank</div>
+          <div class="social-handle">vikas_iiitp</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Vikas Pratap Singh. All rights reserved.</p>
+  <p><a href="#hero">Back to top ↑</a></p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 90);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+
+  // Nav shrink on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 60 ? '0.75rem 5vw' : '1.1rem 5vw';
+  });
+</script>
+</body>
 </html>
