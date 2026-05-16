@@ -215,11 +215,16 @@
       background: var(--accent); border: 2px solid var(--bg-2);
       box-shadow: 0 0 0 3px rgba(0,206,178,0.18), 0 0 12px rgba(0,206,178,0.4);
     }
+    .tl-dot.special {
+      background: var(--accent2);
+      box-shadow: 0 0 0 3px rgba(0,128,255,0.18), 0 0 12px rgba(0,128,255,0.4);
+    }
     .tl-date {
       font-family: 'Fira Code', monospace;
       font-size: 0.72rem; letter-spacing: 0.1em;
       color: var(--accent); margin-bottom: 0.4rem;
     }
+    .tl-date.blue { color: var(--accent2); }
     .tl-role {
       font-size: 1.2rem; font-weight: 600;
       color: var(--text); margin-bottom: 0.2rem;
@@ -250,6 +255,19 @@
       color: var(--accent);
       margin: 0 1px;
       vertical-align: middle;
+    }
+
+    /* onsite badge */
+    .tl-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem; letter-spacing: 0.12em;
+      color: var(--accent2);
+      border: 1px solid rgba(0,128,255,0.3);
+      background: rgba(0,128,255,0.08);
+      padding: 0.2rem 0.65rem;
+      border-radius: 40px;
+      margin-bottom: 0.85rem;
     }
 
     /* ── EDUCATION ── */
@@ -368,8 +386,55 @@
       border-radius:4px;
     }
 
+    /* ── AWARDS ── */
+    #awards { background: var(--bg-2); }
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 960px;
+    }
+    .award-card {
+      padding: 1.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .award-card::after {
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:2px;
+      background: linear-gradient(to right, #FFB800, #FF6B00);
+      opacity:0; transition: opacity 0.3s;
+    }
+    .award-card:hover { transform: translateY(-5px); border-color: rgba(255,184,0,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+    .award-card:hover::after { opacity:1; }
+    .award-icon-wrap {
+      width:42px; height:42px;
+      background: rgba(255,184,0,0.08);
+      border: 1px solid rgba(255,184,0,0.25);
+      border-radius: 10px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom: 1.1rem;
+      color: #FFB800; font-size: 1rem;
+    }
+    .award-title { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:0.35rem; }
+    .award-org { font-family:'Fira Code',monospace; font-size:0.68rem; color:#FFB800; margin-bottom:0.75rem; letter-spacing:0.06em; }
+    .award-desc { font-size:0.82rem; color:var(--text-2); line-height:1.55; }
+    .award-dates {
+      display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem;
+    }
+    .award-date-pill {
+      font-family:'Fira Code',monospace;
+      font-size:0.65rem; padding:0.18rem 0.55rem;
+      background: rgba(255,184,0,0.08);
+      border: 1px solid rgba(255,184,0,0.2);
+      border-radius:40px; color:#FFB800;
+    }
+
     /* ── CONTACT ── */
-    #contact { background: var(--bg-2); }
+    #contact { background: var(--bg); }
     .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; max-width:960px; }
     .contact-heading {
       font-size: clamp(1.5rem,3vw,2.25rem);
@@ -452,6 +517,7 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-socials">
@@ -476,8 +542,8 @@
       <span class="line2">Singh</span>
     </h1>
     <p class="hero-subtitle">
-      <strong>Data Engineer</strong> & Technical Consultant building scalable
-      ETL pipelines, big data workflows, and cloud solutions at o9 Solutions.
+      <strong>Associate Technical Architect</strong> & Data Engineer building scalable
+      ETL pipelines, distributed data systems, and cloud solutions at o9 Solutions.
     </p>
     <div class="hero-cta">
       <a href="assets/Resume.pdf" download class="btn-primary">
@@ -498,36 +564,72 @@
   <h2 class="s-title">Experience</h2>
   <div class="timeline">
 
+    <!-- Associate Technical Architect -->
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
-      <div class="tl-date">Mar 2023 — Present</div>
-      <div class="tl-role">Sr. Technical Consultant</div>
-      <div class="tl-company">o9 Solutions Inc.</div>
+      <div class="tl-date">Apr 2025 — Present</div>
+      <div class="tl-role">Associate Technical Architect</div>
+      <div class="tl-company">o9 Solutions Inc. · Bengaluru</div>
       <ul class="tl-bullets">
-        <li>Building stable ETL workflows using <span class="hi">Hadoop, PySpark, Hive, Airflow, Azure &amp; SSIS</span></li>
-        <li>Automated big data transformation &amp; ingestion pipelines — reduced execution time by <span class="hi">40 mins</span> and eliminated manual interventions entirely</li>
-        <li>Analysing client requirements and developing customised data engineering solutions to meet their specific needs</li>
-        <li>Gathered user feedback, resolved persistent issues, contributing to a <span class="hi">25% boost</span> in user adoption rates</li>
+        <li>Architecting scalable distributed ETL frameworks using <span class="hi">PySpark, Hive, and Apache Airflow</span>, supporting <span class="hi">5+ enterprise</span> production implementations</li>
+        <li>Designing reusable Spark-based transformation patterns leveraging DataFrame API, lazy evaluation, and optimised execution strategies for large-scale datasets</li>
+        <li>Improved Spark job performance through column pruning, broadcast joins, and repartitioning to handle data skew — reducing shuffle overhead in production pipelines</li>
+        <li>Designed centralised <span class="hi">data lineage and pipeline observability framework</span>, improving troubleshooting efficiency and system transparency</li>
+        <li>Providing technical leadership on distributed data architecture, mentoring engineers on Spark optimisation and best practices</li>
+        <li>Leveraged AI-assisted documentation to analyse pipeline architectures, identify design gaps, and standardise TDDs, runbooks, and governance frameworks</li>
       </ul>
     </div>
 
+    <!-- Critical Production Resolution -->
+    <div class="tl-item reveal">
+      <div class="tl-dot special"></div>
+      <div class="tl-date blue">Mar 2025</div>
+      <div class="tl-role">Critical Production Resolution — US Client</div>
+      <div class="tl-company">o9 Solutions Inc. · Onsite, United States</div>
+      <div class="tl-badge"><i class="fas fa-plane" style="font-size:0.6rem"></i> Onsite Engagement</div>
+      <ul class="tl-bullets">
+        <li>Resolved a <span class="hi">critical production escalation</span> in an enterprise planning platform directly impacting business operations</li>
+        <li>Diagnosed data pipeline bottlenecks and optimised <span class="hi">Apache Airflow DAG scheduling</span> and <span class="hi">Apache Hive</span> transformations — improving platform availability by <span class="hi">~40 minutes per day</span></li>
+        <li>Led large-scale client data cleanup and validation efforts, aligning stakeholders on data requirements and improving reliability for downstream planning workflows</li>
+      </ul>
+    </div>
+
+    <!-- Senior Technical Consultant -->
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Apr 2023 — Mar 2025</div>
+      <div class="tl-role">Senior Technical Consultant</div>
+      <div class="tl-company">o9 Solutions Inc. · Bengaluru</div>
+      <ul class="tl-bullets">
+        <li>Designed and implemented distributed ETL pipelines using <span class="hi">PySpark, Hive, Python, and Airflow</span></li>
+        <li>Processed and validated <span class="hi">100M+ records per week</span> using distributed transformations</li>
+        <li>Enhanced pipeline efficiency, cutting ETL execution time by <span class="hi">~30 minutes per run</span> through targeted query and workflow optimisations</li>
+        <li>Implemented automated monitoring and alerting, ensuring <span class="hi">&gt;99% SLA compliance</span></li>
+        <li>Improved platform adoption by <span class="hi">25%</span> by resolving recurring data quality issues and optimising workflows</li>
+      </ul>
+    </div>
+
+    <!-- Technical Consultant -->
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-date">Jul 2021 — Mar 2023</div>
       <div class="tl-role">Technical Consultant</div>
-      <div class="tl-company">o9 Solutions Inc.</div>
+      <div class="tl-company">o9 Solutions Inc. · Bengaluru</div>
       <ul class="tl-bullets">
-        <li>Optimised daily scheduled data-load batches by <span class="hi">55 mins</span>, directly impacting <span class="hi">900+ users</span></li>
-        <li>Collaborated in the CS team to automate Retail Sales &amp; Procurement processes for clients</li>
-        <li>Revamped a complete client solution using Hadoop, Hive, Airflow, Azure, SQL &amp; IBPL — <span class="hi">30% efficiency gain</span> and <span class="hi">20% cost reduction</span></li>
+        <li>Built and maintained batch data pipelines using <span class="hi">Hadoop, Hive, Airflow, Python, and SQL</span></li>
+        <li>Reduced batch processing time by <span class="hi">~55 minutes</span> through distributed query optimisation and workflow redesign</li>
+        <li>Improved data processing efficiency by <span class="hi">30%</span> and reduced infrastructure costs by <span class="hi">20%</span></li>
+        <li>Resolved <span class="hi">50+ production pipeline failures</span> through root cause analysis and long-term reliability improvements</li>
+        <li>Managed end-to-end lifecycle of enterprise data integrations — ingestion → transformation → validation</li>
       </ul>
     </div>
 
+    <!-- Intern -->
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-date">Feb 2021 — Jun 2021</div>
       <div class="tl-role">Intern</div>
-      <div class="tl-company">o9 Solutions Inc.</div>
+      <div class="tl-company">o9 Solutions Inc. · Bengaluru</div>
       <ul class="tl-bullets">
         <li>Developed <span class="hi">Employee Rating Portal</span> — a high-impact feature enhancing client engagement &amp; satisfaction</li>
         <li>Built end-to-end solutions using Azure, SQL, SSIS &amp; o9 IBPL across multiple projects</li>
@@ -535,6 +637,7 @@
       </ul>
     </div>
 
+    <!-- Cadence -->
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-date">May 2020 — Nov 2020</div>
@@ -546,6 +649,7 @@
       </ul>
     </div>
 
+    <!-- IIT Kanpur -->
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-date">May 2019 — Jun 2019</div>
@@ -570,7 +674,7 @@
       <div class="edu-degree">B.Tech — Electronics &amp; Communication Engineering</div>
       <div class="edu-school">Indian Institute of Information Technology, Pune (IIIT Pune)</div>
       <div class="edu-pills">
-        <span class="pill">May 2021</span>
+        <span class="pill">2017 – 2021</span>
         <span class="pill">CGPA 8.85 / 10</span>
       </div>
     </div>
@@ -605,35 +709,42 @@
       <div class="sk-tags">
         <span class="sk-tag">Python</span>
         <span class="sk-tag">SQL</span>
-        <span class="sk-tag">SSIS</span>
-        <span class="sk-tag">o9 IBPL</span>
-        <span class="sk-tag">System Verilog</span>
-        <span class="sk-tag">Perl</span>
+        <span class="sk-tag">Shell</span>
+        <span class="sk-tag">SQL Server</span>
       </div>
     </div>
     <div class="reveal">
       <div class="sk-cat-title">Big Data &amp; Cloud</div>
       <div class="sk-tags">
-        <span class="sk-tag">Apache Hadoop</span>
         <span class="sk-tag">PySpark</span>
+        <span class="sk-tag">Apache Hadoop</span>
         <span class="sk-tag">Apache Hive</span>
         <span class="sk-tag">Apache Airflow</span>
+        <span class="sk-tag">Delta Lake</span>
+        <span class="sk-tag">Databricks</span>
         <span class="sk-tag">Azure</span>
-        <span class="sk-tag">Hue</span>
+        <span class="sk-tag">GCP</span>
       </div>
     </div>
     <div class="reveal">
-      <div class="sk-cat-title">Tools &amp; Platforms</div>
+      <div class="sk-cat-title">ETL &amp; Data Engineering</div>
+      <div class="sk-tags">
+        <span class="sk-tag">ETL Pipelines</span>
+        <span class="sk-tag">Data Modeling</span>
+        <span class="sk-tag">Data Transformation</span>
+        <span class="sk-tag">Data Ingestion</span>
+        <span class="sk-tag">SSIS</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sk-cat-title">Tools &amp; DevOps</div>
       <div class="sk-tags">
         <span class="sk-tag">Git</span>
-        <span class="sk-tag">GitHub</span>
+        <span class="sk-tag">CI/CD</span>
         <span class="sk-tag">Linux</span>
-        <span class="sk-tag">OpenCV</span>
-        <span class="sk-tag">Raspberry Pi</span>
-        <span class="sk-tag">MATLAB</span>
       </div>
     </div>
-    <div class="reveal">
+    <div class="reveal" style="grid-column: 1 / -1;">
       <div class="sk-cat-title">Coursework</div>
       <div class="sk-tags">
         <span class="sk-tag">Data Structures</span>
@@ -690,6 +801,42 @@
   </div>
 </section>
 
+<!-- AWARDS -->
+<section id="awards">
+  <div class="s-tag">recognition</div>
+  <h2 class="s-title">Awards</h2>
+  <div class="awards-grid">
+
+    <div class="award-card reveal">
+      <div class="award-icon-wrap"><i class="fas fa-trophy"></i></div>
+      <div class="award-title">o9 Spotlight Award — VP Recognition</div>
+      <div class="award-org">o9 Solutions</div>
+      <p class="award-desc">Recognised by the VP of Client Success for resolving a critical production issue and delivering exceptional client support during a high-stakes onsite engagement.</p>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-icon-wrap"><i class="fas fa-layer-group"></i></div>
+      <div class="award-title">Centralised ETL Framework — Enterprise Adoption</div>
+      <div class="award-org">o9 Solutions</div>
+      <p class="award-desc">Designed a centralised ETL workflow framework that was adopted across <strong style="color:var(--text)">30+ enterprise projects</strong>, becoming an internal standard for pipeline architecture.</p>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-icon-wrap"><i class="fas fa-star"></i></div>
+      <div class="award-title">o9 Spotlight Award — Engineering Excellence</div>
+      <div class="award-org">o9 Solutions</div>
+      <p class="award-desc">Received multiple spotlight awards recognising consistent engineering excellence, technical leadership, and high-impact contributions across client delivery and internal initiatives.</p>
+      <div class="award-dates">
+        <span class="award-date-pill">Jul 2023</span>
+        <span class="award-date-pill">Nov 2023</span>
+        <span class="award-date-pill">May 2024</span>
+        <span class="award-date-pill">Aug 2025</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="s-tag">connect</div>
@@ -740,7 +887,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Vikas Pratap Singh. All rights reserved.</p>
+  <p>© 2026 Vikas Pratap Singh. All rights reserved.</p>
   <p><a href="#hero">Back to top ↑</a></p>
 </footer>
 
